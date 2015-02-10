@@ -1,0 +1,54 @@
+block content
+ .container
+  .row
+    .col-sm-8.blog
+      h2 New Article
+      .contact-form.form-horizontal
+        form.form-horizontal.col-md-11(role='form', method='POST', action='/article/create', id='createArticleForm')
+          .form-group
+            label(for='title') Title:
+            input#email.form-control(type='text', placeholder='Enter Title', name='title')
+          .form-group
+            label(for='content') Content:
+            textarea#email.form-control(type='text', placeholder='Enter Content', rows=20, name='content')
+          .form-group
+            label(for='tag') Tag:
+            input#email.form-control(type='text', placeholder='Enter Tag', name='tag')
+          .form-group
+            .col-md-12.text-right
+                button.btn.btn-lg.btn-primary(type='submit') Save
+    .col-sm-4.sidebar
+      h3.tpad Search
+      section
+        .input-group.input-group-sm.tpad
+          span.input-group-addon.glyphicon.glyphicon-search
+          input.form-control.input-lg(type='text', placeholder='Search')
+          span.input-group-btn
+            button.btn.btn-default(type='button') Go
+        hr
+       section
+           h3.tpad Tags
+           a.list-group-item.blog-tag.active(href='/blog')
+             span.badge #{data.totalTags}
+             | All Tags 
+             - each tag in data.tags
+               a.list-group-item.blog-tag(href='/blog/tag/#{tag.name}')
+                 span.badge #{tag.numberOf}
+                 | #{tag.name}
+           hr
+      section
+        h3.tpad Latest from Twitter
+        .media.tpad
+          a.pull-left(href='https://twitter.com/ftmikeyoung')
+            img.media-object(src='images/baby_girl.jpg', alt='user', width='50%')
+          .media-body
+            h4.media-heading @sdong
+            p.bpad Titanic is a good movie
+        hr
+  
+  script(src="/javascripts/article-new.js")
+  script(src="/javascripts/blog.js")
+ 
+  script(src="https://tinymce.cachefly.net/4.1/tinymce.min.js")
+  script(type="text/javascript").
+      tinymce.init({selector:'textarea'});

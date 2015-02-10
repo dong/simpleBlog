@@ -1,0 +1,23 @@
+block content
+    .container
+        h1 Signup
+        .contact-form
+            form.form-horizontal.col-md-8(role='form', method='POST' id='signupform')
+                .form-group
+                    label.col-md-3(for='title') Name
+                    .col-md-10
+                        input#email.form-control(type='text', placeholder='Name', name='name')
+                .form-group
+                    label.col-md-3(for='title') Email
+                    .col-md-10
+                        input#email.form-control(type='text', placeholder='Email', name='email')
+                .form-group
+                    label.col-md-3(for='content') Password
+                    .col-md-10
+                        input#password.form-control(type='password', placeholder='Password', name='password')
+                .form-group
+                    .col-md-10.text-right
+                        button.btn.btn-lg.btn-primary(id='signup', type='submit') Signup
+    // End Navigation
+    script(src="/javascripts/signup.js")
+    script(src="/javascripts/signin.js")
