@@ -2,7 +2,7 @@
 
 Author: Shen Dong
 
-A Simple Blog system built based on node.js, MongoDB and Jade.
+A Simple Blog system built from scratch based on Node.js, MongoDB and Jade.
 
 # Tech Stack
 
